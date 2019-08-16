@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+    <context:component-scan base-package="entity,dao,service"></context:component-scan>
+    <!--id唯一标识 通过id找到该标签 使用默认的构造函数-->
+    <!--<bean id="user" class="entity.User">
+        &lt;!&ndash;set注入&ndash;&gt;
+        <property name="name" value="张嘎"></property>
+        <property name="content" value="三天不打鬼子，手就痒"></property>
+        &lt;!&ndash;构造函数注入&ndash;&gt;
+        &lt;!&ndash;<constructor-arg name="name" value="zhangga"></constructor-arg>
+        <constructor-arg name="content" value="三天不打鬼子，手就痒"></constructor-arg>&ndash;&gt;
+        &lt;!&ndash;索引&ndash;&gt;
+       &lt;!&ndash; <constructor-arg index="0" value="zhangga"></constructor-arg>
+       <constructor-arg index="1" value="三天不打鬼子，手就痒"></constructor-arg>&ndash;&gt;
+    </bean>
+    <bean id="user1" class="entity.User">
+        <property name="name" value="rod"></property>
+        <property name="content" value="世界上有十种人"></property>
+    </bean>
+    &lt;!&ndash;使用静态工厂构造对象&ndash;&gt;
+    <bean id="factory" class="factory.BeanFactory" factory-method="getBean"></bean>
+    &lt;!&ndash;使用实例工厂方法创建对象&ndash;&gt;
+    <bean id="factory1" class="factory.BeanFactory1"></bean>
+    <bean id="bean" factory-bean="factory1" factory-method="getBean"></bean>
+
+    &lt;!&ndash;创建userDao&ndash;&gt;
+    <bean id="userdao" class="dao.impl.UserDaoImpl"></bean>
+    &lt;!&ndash;创建userService&ndash;&gt;
+    <bean id="userservice" class="service.impl.UserServiceImpl">
+        <property name="userDao" ref="userdao"></property>
+    </bean>
+
+   &lt;!&ndash; <bean id="IKitchener" class="dao.impl.IKitchenerImpl"></bean>&ndash;&gt;
+    <bean id="icu" class="dao.impl.ICustomerImpl">
+    <property name="name" value="顾客"></property>
+    <property name="iKitchener" ref="iki"></property>
+    </bean>
+    <bean id="iki" class="dao.impl.IKitchenerImpl">
+        <property name="name" value="厨师"></property>
+        <property name="cai" value="菜"></property>
+    </bean>
+    <bean id="order" class="entity.OrderServiceBean">
+        <property name="lists">
+            <list>
+                <value>lihuoming</value>
+            </list>
+        </property>
+        <property name="sets">
+            <set>
+                <value>set</value>
+            </set>
+        </property>
+        <property name="maps">
+            <map>
+                <entry key="lihuoming" value="28"/>
+            </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="12">sss</prop>
+            </props>
+        </property>
+    </bean>-->
+
+</beans>
